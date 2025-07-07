@@ -6,9 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class BeginPanel : BasePanel<BeginPanel>
 {
+    [SerializeField] GameObject settingPanel;
+
     void Start()
     {
-        
+        settingPanel.SetActive(true);
+        settingPanel.SetActive(false);
     }
 
     void Update()
@@ -25,6 +28,7 @@ public class BeginPanel : BasePanel<BeginPanel>
     public void OnSettingButton()
     {
         Debug.Log("”Œœ∑…Ë÷√");
+        SettingPanel.Instance.ShowMinePanel();
     }
 
     public void OnQuitButton()

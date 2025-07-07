@@ -25,11 +25,6 @@ public class BasePanel<T> : MonoBehaviour where T: MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        
-    }
-
     public virtual void ShowMinePanel()
     {
         this.gameObject.SetActive(true);   
