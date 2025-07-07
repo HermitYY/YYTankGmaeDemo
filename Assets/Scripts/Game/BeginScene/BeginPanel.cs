@@ -7,11 +7,16 @@ using UnityEngine.SceneManagement;
 public class BeginPanel : BasePanel<BeginPanel>
 {
     [SerializeField] GameObject settingPanel;
+    [SerializeField] GameObject rankPanel;
+
 
     void Start()
     {
         settingPanel.SetActive(true);
         settingPanel.SetActive(false);
+
+        rankPanel.SetActive(true);
+        rankPanel.SetActive(false);
     }
 
     void Update()
@@ -29,6 +34,12 @@ public class BeginPanel : BasePanel<BeginPanel>
     {
         Debug.Log("”Œœ∑…Ë÷√");
         SettingPanel.Instance.ShowMinePanel();
+    }
+
+    public void OnRankButton()
+    {
+        Debug.Log("≈≈––∞Ò");
+        RankPanel.Instance.ShowMinePanel();
     }
 
     public void OnQuitButton()
