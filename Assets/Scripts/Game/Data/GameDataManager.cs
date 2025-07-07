@@ -39,6 +39,8 @@ public class GameDataManager
     public void SaveMusicData()
     {
         PlayerPrefsDataMgr.Instance.SaveData(musicData, "music");
+        BGM.Instance.ChangeValue(musicData.BGMVolume);
+        BGM.Instance.ChangeOpen(musicData.BGMIsOpen);
     }
     #endregion
 

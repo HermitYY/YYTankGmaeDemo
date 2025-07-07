@@ -22,7 +22,7 @@ public class SettingPanel : BasePanel<SettingPanel>
         BGMCloseButton.SetActive(false);
         BGMOpenButton.SetActive(true);
         musicData.BGMIsOpen = false;
-
+        GameDataManager.Instance.SaveMusicData();
     }
 
     public void OnBGMOpen() {
@@ -55,6 +55,7 @@ public class SettingPanel : BasePanel<SettingPanel>
     public void ChangeEffectSlider(float value)
     {
         musicData.EffectVolume = value;
+        GameDataManager.Instance.SaveMusicData();
     }
 
     public void UpdataPanelInfo()
