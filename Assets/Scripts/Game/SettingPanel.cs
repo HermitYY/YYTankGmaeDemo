@@ -81,5 +81,12 @@ public class SettingPanel : BasePanel<SettingPanel>
     {
         base.ShowMinePanel();
         UpdataPanelInfo();
+        Time.timeScale = 0;
+    }
+
+    public override void HideMinePanel()
+    {
+        base.HideMinePanel();
+        Time.timeScale = 1;
     }
 }

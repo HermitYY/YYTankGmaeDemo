@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GamePanel : BasePanel<GamePanel>
 {
+    public GameObject exitGamePanel;
+
     public Slider BloodBar;
     private Coroutine healthLerpCoroutine;
     private const float lerpSpeed = 10f;
@@ -20,7 +22,8 @@ public class GamePanel : BasePanel<GamePanel>
 
     void Start()
     {
-        
+        exitGamePanel.SetActive(true);
+        exitGamePanel.SetActive(false);
     }
 
     void Update()
@@ -33,7 +36,9 @@ public class GamePanel : BasePanel<GamePanel>
         SettingPanel.Instance.ShowMinePanel();
     }
 
-    public void OnExitButton() { }
+    public void OnExitButton() {
+        ExitGamePanel.Instance.ShowMinePanel();
+    }
 
     public void UpdateHealthUI(float maxHealthValue, float currentHealthValue)
     {
