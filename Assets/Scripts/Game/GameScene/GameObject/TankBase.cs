@@ -17,8 +17,17 @@ public abstract class TankBase : MonoBehaviour
     public GameObject deadEffect;
     protected abstract void Fire();
 
-    protected virtual void Wonnd(TankBase attackTank) {
+    protected virtual void Start()
+    {
+        currentHealth = maxHealth;
+    }
+
+    public virtual void Wonnd(TankBase attackTank) {
         int dmg = attackTank.atk - def;
+        Debug.Log(dmg);
+        Debug.Log(currentHealth);
+        Debug.Log(maxHealth);
+
         if (dmg > 0)
         {
             currentHealth -= dmg;
@@ -39,8 +48,6 @@ public abstract class TankBase : MonoBehaviour
     {
         if (deadEffect == null) return;
         GameObject effect = Instantiate(deadEffect, transform.position, transform.rotation);
-        AudioSource audioSource = effect.GetComponent<AudioSource>();
-        audioSource.mute = !GameDataManager.Instance.musicData.EffectIsOpen;
-        audioSource.volume = GameDataManager.Instance.musicData.EffectVolume;
+        GameDataManager.Instance.SetGameObjectEffectAudioSource(effect);
     }
 }

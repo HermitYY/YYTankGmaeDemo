@@ -42,6 +42,14 @@ public class GameDataManager
         BGM.Instance.ChangeValue(musicData.BGMVolume);
         BGM.Instance.ChangeOpen(musicData.BGMIsOpen);
     }
+
+    public void SetGameObjectEffectAudioSource(GameObject effect)
+    {
+        AudioSource audioSource = effect.GetComponent<AudioSource>();
+        if (audioSource == null) return;
+        audioSource.mute = !musicData.EffectIsOpen;
+        audioSource.volume = musicData.EffectVolume;
+    }
     #endregion
 
     #region ≈≈––∞Ò

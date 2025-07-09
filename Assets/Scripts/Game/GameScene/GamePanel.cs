@@ -8,10 +8,6 @@ public class GamePanel : BasePanel<GamePanel>
 {
     public GameObject exitGamePanel;
 
-    public Slider BloodBar;
-    private Coroutine healthLerpCoroutine;
-    private const float lerpSpeed = 10f;
-
     public TextMeshProUGUI TimeText;
     [HideInInspector]
     public float nowTime;
@@ -38,32 +34,6 @@ public class GamePanel : BasePanel<GamePanel>
 
     public void OnExitButton() {
         ExitGamePanel.Instance.ShowMinePanel();
-    }
-
-    public void UpdateHealthUI(float maxHealthValue, float currentHealthValue)
-    {
-        if (BloodBar == null) return;
-
-        BloodBar.maxValue = maxHealthValue;
-
-        if (healthLerpCoroutine != null)
-        {
-            StopCoroutine(healthLerpCoroutine);
-        }
-
-        healthLerpCoroutine = StartCoroutine(LerpHealth(BloodBar.value, currentHealthValue));
-    }
-
-    private IEnumerator LerpHealth(float startValue, float targetValue)
-    {
-        float elapsedTime = 0f;
-        while (elapsedTime < 1f)
-        {
-            elapsedTime += Time.deltaTime * lerpSpeed;
-            BloodBar.value = Mathf.Lerp(startValue, targetValue, elapsedTime);
-            yield return null;
-        }
-        BloodBar.value = targetValue;
     }
 
     private void UpdateTime()

@@ -24,7 +24,7 @@ public class TankAttack : MonoBehaviour
         {
             Bullet bullet = GameObject.Instantiate(bulletPrefab).GetComponent<Bullet>();
             Vector3 position = transform.TransformPoint(Vector3.forward * 3);
-            bullet.SetUp(position, 10, transform.eulerAngles);
+            //bullet.SetUp(position, 10, transform.rotation);
         }
     }
 }
