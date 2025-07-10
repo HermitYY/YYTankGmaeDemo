@@ -32,7 +32,7 @@ public abstract class TankBase : MonoBehaviour
             currentHealth -= dmg;
             UpdateHealthUI();
         }
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
             currentHealth = 0;
             Die();
@@ -41,7 +41,10 @@ public abstract class TankBase : MonoBehaviour
 
     public void UpdateHealthUI()
     {
-        healthBar?.GetComponent<HealthBar>().UpdateHealthUI(maxHealth, currentHealth);
+        if (healthBar == null) return;
+        HealthBar healthBarScript = healthBar?.GetComponent<HealthBar>();
+        if (healthBarScript == null) return;
+        healthBarScript.UpdateHealthUI(maxHealth, currentHealth);
     }
 
     protected virtual void Die() {
