@@ -8,7 +8,7 @@ public class RewardBoxBase : MonoBehaviour
     [SerializeField] private GameObject pickUpEffect;
     private void OnTriggerEnter(Collider other)
     {
-        PlayerTank playerTank = GetComponent<PlayerTank>();
+        PlayerTank playerTank = other.GetComponent<PlayerTank>();
         if (playerTank != null)
         {
             OnTriggerPlayer(playerTank);

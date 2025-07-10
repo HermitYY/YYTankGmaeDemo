@@ -36,6 +36,7 @@ public class AttrRewardBox : RewardBoxBase
             case EAttrRewardBoxType.HEALTH:
                 int health = playerObj.currentHealth + (int)attrValue;
                 playerObj.currentHealth = Mathf.Min(health, playerObj.maxHealth);
+                playerObj.UpdateHealthUI();
                 break;
 
         }

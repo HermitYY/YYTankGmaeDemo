@@ -20,7 +20,7 @@ public abstract class TankBase : MonoBehaviour
 
     protected virtual void Start()
     {
-        healthBar?.GetComponent<HealthBar>().UpdateHealthUI(maxHealth, currentHealth);
+        UpdateHealthUI();
         currentHealth = maxHealth;
     }
 
@@ -30,13 +30,18 @@ public abstract class TankBase : MonoBehaviour
         if (dmg > 0)
         {
             currentHealth -= dmg;
-            healthBar?.GetComponent<HealthBar>().UpdateHealthUI(maxHealth, currentHealth);
+            UpdateHealthUI();
         }
         if (currentHealth < 0)
         {
             currentHealth = 0;
             Die();
         }
+    }
+
+    public void UpdateHealthUI()
+    {
+        healthBar?.GetComponent<HealthBar>().UpdateHealthUI(maxHealth, currentHealth);
     }
 
     protected virtual void Die() {
