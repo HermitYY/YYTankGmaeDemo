@@ -15,22 +15,22 @@ public abstract class TankBase : MonoBehaviour
 
     public GameObject turret;
     public GameObject deadEffect;
+    public GameObject healthBar;
     protected abstract void Fire();
 
     protected virtual void Start()
     {
+        healthBar?.GetComponent<HealthBar>().UpdateHealthUI(maxHealth, currentHealth);
         currentHealth = maxHealth;
     }
 
     public virtual void Wonnd(TankBase attackTank) {
         int dmg = attackTank.atk - def;
-        Debug.Log(dmg);
-        Debug.Log(currentHealth);
-        Debug.Log(maxHealth);
 
         if (dmg > 0)
         {
             currentHealth -= dmg;
+            healthBar?.GetComponent<HealthBar>().UpdateHealthUI(maxHealth, currentHealth);
         }
         if (currentHealth < 0)
         {

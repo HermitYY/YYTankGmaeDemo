@@ -11,7 +11,6 @@ public class PlayerTank : TankBase
     protected override void Start()
     {
         base.Start();
-        GamePanel.Instance.GetComponent<HealthBar>().UpdateHealthUI(maxHealth, currentHealth);
         rb = GetComponent<Rigidbody>();
     }
 
@@ -56,7 +55,6 @@ public class PlayerTank : TankBase
     public override void Wonnd(TankBase attackTank)
     {
         base.Wonnd(attackTank);
-        GamePanel.Instance.GetComponent<HealthBar>().UpdateHealthUI(maxHealth, currentHealth);
         Debug.Log(" ‹µΩ…À∫¶");
     }
 
