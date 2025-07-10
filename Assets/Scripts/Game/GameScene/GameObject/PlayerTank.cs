@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerTank : TankBase
 {
     private Rigidbody rb;
+    public GameObject waeponSolt;
 
     protected override void Start()
     {
@@ -57,5 +58,18 @@ public class PlayerTank : TankBase
         base.Wonnd(attackTank);
         GamePanel.Instance.GetComponent<HealthBar>().UpdateHealthUI(maxHealth, currentHealth);
         Debug.Log(" ‹µΩ…À∫¶");
+    }
+
+    public void ChangeWeapon(GameObject weaponPrefab)
+    {
+        for (int i = 0; i < waeponSolt.transform.childCount; i++)
+        {
+            Transform child = waeponSolt.transform.GetChild(i);
+            if (child != null)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+        Instantiate(weaponPrefab, waeponSolt.transform);
     }
 }
