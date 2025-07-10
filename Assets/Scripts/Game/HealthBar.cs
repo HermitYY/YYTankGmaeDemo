@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour
         if (BloodBar.maxValue != maxHealthValue)
         {
             BloodBar.maxValue = maxHealthValue;
-            BloodBar.value = currentHealthValue;
+            BloodBar.value = maxHealthValue;
             return;
         }
 
