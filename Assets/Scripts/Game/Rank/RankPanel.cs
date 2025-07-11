@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class RankPanel : BasePanel<RankPanel>
 {
@@ -9,12 +7,12 @@ public class RankPanel : BasePanel<RankPanel>
     public GameObject RankTblList;
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        
+
     }
 
     public void UpdateRankList(List<RankTblData> listData)

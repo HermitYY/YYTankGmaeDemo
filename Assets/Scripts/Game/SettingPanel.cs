@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,14 +16,16 @@ public class SettingPanel : BasePanel<SettingPanel>
         UpdataPanelInfo();
     }
 
-    public void OnBGMClose() {
+    public void OnBGMClose()
+    {
         BGMCloseButton.SetActive(false);
         BGMOpenButton.SetActive(true);
         musicData.BGMIsOpen = false;
         GameDataManager.Instance.SaveMusicData();
     }
 
-    public void OnBGMOpen() {
+    public void OnBGMOpen()
+    {
         BGMOpenButton.SetActive(false);
         BGMCloseButton.SetActive(true);
         musicData.BGMIsOpen = true;
@@ -38,14 +38,16 @@ public class SettingPanel : BasePanel<SettingPanel>
         GameDataManager.Instance.SaveMusicData();
     }
 
-    public void OnEffectClose() {
+    public void OnEffectClose()
+    {
         EffectCloseButton.SetActive(false);
         EffectOpenButton.SetActive(true);
         musicData.EffectIsOpen = false;
         GameDataManager.Instance.SaveMusicData();
     }
 
-    public void OnEffectOpen() {
+    public void OnEffectOpen()
+    {
         EffectOpenButton.SetActive(false);
         EffectCloseButton.SetActive(true);
         musicData.EffectIsOpen = true;

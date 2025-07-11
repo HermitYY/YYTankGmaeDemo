@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BasePanel<T> : MonoBehaviour where T: MonoBehaviour
+public class BasePanel<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T _instance;
     public static T Instance => _instance;
@@ -27,7 +25,7 @@ public class BasePanel<T> : MonoBehaviour where T: MonoBehaviour
 
     public virtual void ShowMinePanel()
     {
-        this.gameObject.SetActive(true);   
+        this.gameObject.SetActive(true);
     }
 
     public virtual void HideMinePanel()

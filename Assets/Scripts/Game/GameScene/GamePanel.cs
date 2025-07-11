@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GamePanel : BasePanel<GamePanel>
 {
@@ -35,11 +32,13 @@ public class GamePanel : BasePanel<GamePanel>
         UpdateTime();
     }
 
-    public void OnSettingButton() {
+    public void OnSettingButton()
+    {
         SettingPanel.Instance.ShowMinePanel();
     }
 
-    public void OnExitButton() {
+    public void OnExitButton()
+    {
         ExitGamePanel.Instance.ShowMinePanel();
     }
 

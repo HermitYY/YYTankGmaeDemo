@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class RankTbl: MonoBehaviour
+public class RankTbl : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI rankPosText;
     [SerializeField] private TextMeshProUGUI playerNameText;

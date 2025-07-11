@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovableMonsterTank : TankBase
@@ -64,10 +62,10 @@ public class MovableMonsterTank : TankBase
             if (col.GetComponent<PlayerTank>() != null)
             {
                 turret.transform.LookAt(col.transform.position);
-                if (Vector3.Distance(transform.position, col.transform.position) < fireDis )
+                if (Vector3.Distance(transform.position, col.transform.position) < fireDis)
                 {
                     Fire();
-                } 
+                }
                 return;
             }
         }

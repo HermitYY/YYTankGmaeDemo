@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ExitGamePanel : BasePanel<ExitGamePanel>
 {
-    public void OnExitGame() {
+    public void OnExitGame()
+    {
         HideMinePanel();
         SceneManager.LoadScene("BeginScene");
     }

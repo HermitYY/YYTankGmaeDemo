@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,12 +15,14 @@ public class FailurePanel : BasePanel<FailurePanel>
         Time.timeScale = 1;
     }
 
-    public void OnConfirm() {
-        this.HideMinePanel() ;
+    public void OnConfirm()
+    {
+        this.HideMinePanel();
         SceneManager.LoadScene("BeginScene");
     }
 
-    public void OnRetry() {
+    public void OnRetry()
+    {
         this.HideMinePanel();
         SceneManager.LoadScene("MainGameScene");
     }
