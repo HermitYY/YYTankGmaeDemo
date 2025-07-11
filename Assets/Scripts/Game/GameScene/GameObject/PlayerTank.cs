@@ -26,7 +26,6 @@ public class PlayerTank : TankBase
 
     protected override void Fire()
     {
-        TankWeapon weapon = GetComponentInChildren<TankWeapon>();
         if (weapon == null) return;
         weapon.Shoot();
     }
@@ -68,6 +67,7 @@ public class PlayerTank : TankBase
                 Destroy(child.gameObject);
             }
         }
-        Instantiate(weaponPrefab, waeponSolt.transform);
+        GameObject newWeapon = Instantiate(weaponPrefab, waeponSolt.transform);
+        weapon = newWeapon.GetComponent<TankWeapon>();
     }
 }

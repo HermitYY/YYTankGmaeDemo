@@ -8,7 +8,6 @@ public class FixedMonsterTank : TankBase
     private float AttackIntervalTimer;
     protected override void Fire()
     {
-        TankWeapon weapon = GetComponentInChildren<TankWeapon>();
         if (weapon == null) return;
         weapon.Shoot();
     }

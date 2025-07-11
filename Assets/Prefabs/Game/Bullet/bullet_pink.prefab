@@ -5065,5 +5065,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyEffect: {fileID: 148254, guid: d3fef3db0b989db448108cf6ef617b97, type: 3}
-  velocity: 30
-  customGravity: {x: 0, y: -3, z: 0}
+  velocity: 40
+  customGravity: {x: 0, y: -2, z: 0}

@@ -16,10 +16,13 @@ public abstract class TankBase : MonoBehaviour
     public GameObject turret;
     public GameObject deadEffect;
     public GameObject healthBar;
+
+    protected TankWeapon weapon;
     protected abstract void Fire();
 
     protected virtual void Start()
     {
+        weapon = GetComponentInChildren<TankWeapon>();
         UpdateHealthUI();
         currentHealth = maxHealth;
     }

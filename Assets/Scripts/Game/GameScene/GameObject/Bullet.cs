@@ -40,9 +40,9 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         TankBase tank = other.GetComponent<TankBase>();
-        if (tank == null  || other == null || other.gameObject == null || sourceTank == null) return;
+        if (other == null || other.gameObject == null || sourceTank == null) return;
         if (tank == sourceTank) return;
-        if (other.CompareTag("Wall") || (other.tag == sourceTank.tag) || (other.CompareTag("DestructibleWall") && sourceTank.GetComponent<PlayerTank>() == null))
+        if (tank == null || other.CompareTag("Wall") || (other.tag == sourceTank.tag) || (other.CompareTag("DestructibleWall") && sourceTank.GetComponent<PlayerTank>() == null))
         {
             MyDestroy();
             return;

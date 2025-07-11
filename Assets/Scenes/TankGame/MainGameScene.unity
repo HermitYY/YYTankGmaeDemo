@@ -241,6 +241,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 685938473}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &55172877
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 55172878}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &55172878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55172877}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.19, y: 0, z: 22.64}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &55812857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2208,7 +2239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &592715326
 Transform:
   m_ObjectHideFlags: 0
@@ -5305,7 +5336,7 @@ Transform:
   m_GameObject: {fileID: 1615092444}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.05, y: 0, z: 27.48}
+  m_LocalPosition: {x: 19.82, y: 0, z: 33.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5340,54 +5371,14 @@ GameObject:
   - component: {fileID: 1615059412}
   - component: {fileID: 1620384534}
   - component: {fileID: 1612115672}
-  - component: {fileID: 1615193908}
-  - component: {fileID: 1615193909}
+  - component: {fileID: 1620384535}
   m_Layer: 0
-  m_Name: Tank1
+  m_Name: MovableMonsterTank
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1615193908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1615092444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ded3722b41e57194390c3cf3acda6ada, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  atk: 10
-  def: 5
-  maxHealth: 100
-  currentHealth: 0
-  moveSpeed: 0
-  moveRotaAngularVelocity: 0
-  turretRotaAngularVelocity: 0
-  turret: {fileID: 0}
-  deadEffect: {fileID: 0}
-  healthBar: {fileID: 0}
-  AttackInterval: 3
---- !u!114 &1615193909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1615092444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afb6837b820c4ee48bcaa0c60b3b6f05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  range01: 0
-  range02: 1
-  rotationSpeed: 30
 --- !u!1 &1615285726
 GameObject:
   m_ObjectHideFlags: 0
@@ -5451,6 +5442,7 @@ GameObject:
   - component: {fileID: 1614967666}
   - component: {fileID: 1618448968}
   - component: {fileID: 1617331326}
+  - component: {fileID: 1618448969}
   m_Layer: 0
   m_Name: Gun_5
   m_TagString: Untagged
@@ -5608,6 +5600,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615315634}
   m_Mesh: {fileID: 4300010, guid: 2daec5a52629f1943aa8397381c83864, type: 3}
+--- !u!114 &1618448969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615315634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e194cb735fdff7e43b593ece2c0c5515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 7130231641125829949, guid: 7a22311b49abcb74888c76b2e8bb20ed, type: 3}
+  shootPos:
+  - {fileID: 1614963560}
 --- !u!136 &1620384534
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5631,6 +5638,35 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1.25, z: 0}
+--- !u!114 &1620384535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615092444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e83faa45c1668a4884e571ccc3a5b4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atk: 10
+  def: 5
+  maxHealth: 50
+  currentHealth: 0
+  moveSpeed: 5
+  moveRotaAngularVelocity: 30
+  turretRotaAngularVelocity: 60
+  turret: {fileID: 1615300736}
+  deadEffect: {fileID: 161024, guid: 20ac59f257d5eda4b99b1855d91195b1, type: 3}
+  healthBar: {fileID: 0}
+  movePoint:
+  - {x: 20, y: 0, z: 33}
+  - {x: 15, y: 0, z: 31}
+  - {x: 20, y: 0, z: 23}
+  AttackInterval: 5
+  fireDis: 13
+  viewDis: 20
 --- !u!1 &1680009292
 GameObject:
   m_ObjectHideFlags: 0
@@ -6945,3 +6981,4 @@ SceneRoots:
   - {fileID: 1949033738}
   - {fileID: 1615059412}
   - {fileID: 592801026}
+  - {fileID: 55172878}
