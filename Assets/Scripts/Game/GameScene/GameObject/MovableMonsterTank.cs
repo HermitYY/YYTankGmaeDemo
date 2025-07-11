@@ -74,6 +74,12 @@ public class MovableMonsterTank : TankBase
         turret.transform.LookAt(transform.position + transform.forward);
     }
 
+    protected override void Die()
+    {
+        GamePanel.Instance.AddSorce(10);
+        base.Die();
+    }
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

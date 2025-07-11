@@ -18,6 +18,7 @@ public class DestructibleWall : TankBase
     protected override void Die()
     {
         TryDropItem();
+        GamePanel.Instance.AddSorce(1);
         base.Die();
     }
 

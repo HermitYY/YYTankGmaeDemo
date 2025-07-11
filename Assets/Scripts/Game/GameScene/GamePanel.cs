@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class GamePanel : BasePanel<GamePanel>
 {
     public GameObject exitGamePanel;
+    public GameObject VictoryPanel;
+    public GameObject FailurePanel;
+
 
     public TextMeshProUGUI TimeText;
     [HideInInspector]
@@ -20,6 +23,10 @@ public class GamePanel : BasePanel<GamePanel>
     {
         exitGamePanel.SetActive(true);
         exitGamePanel.SetActive(false);
+        VictoryPanel.SetActive(true);
+        VictoryPanel.SetActive(false);
+        FailurePanel.SetActive(true);
+        FailurePanel.SetActive(false);
     }
 
     void Update()
@@ -39,5 +46,11 @@ public class GamePanel : BasePanel<GamePanel>
     private void UpdateTime()
     {
         TimeText.text = nowTime.ToString("0.0") + " √Î";
+    }
+
+    public void AddSorce(int sorce)
+    {
+        currentSorce += sorce;
+        SorceText.text = currentSorce.ToString();
     }
 }

@@ -42,11 +42,12 @@ public class Bullet : MonoBehaviour
         TankBase tank = other.GetComponent<TankBase>();
         if (other == null || other.gameObject == null || sourceTank == null) return;
         if (tank == sourceTank) return;
-        if (tank == null || other.CompareTag("Wall") || (other.tag == sourceTank.tag) || (other.CompareTag("DestructibleWall") && sourceTank.GetComponent<PlayerTank>() == null))
+        if (other.CompareTag("Wall") || (other.tag == sourceTank.tag) || (other.CompareTag("DestructibleWall") && sourceTank.GetComponent<PlayerTank>() == null))
         {
             MyDestroy();
             return;
         }
+        if (tank == null) return;
         tank.Wonnd(sourceTank);
         MyDestroy();
     }

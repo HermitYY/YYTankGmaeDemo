@@ -16,6 +16,7 @@ public abstract class TankBase : MonoBehaviour
     public GameObject turret;
     public GameObject deadEffect;
     public GameObject healthBar;
+    public GameObject healthBarPrefab;
 
     protected TankWeapon weapon;
     protected abstract void Fire();
@@ -23,11 +24,13 @@ public abstract class TankBase : MonoBehaviour
     protected virtual void Start()
     {
         weapon = GetComponentInChildren<TankWeapon>();
+        InitHealthBar();
         UpdateHealthUI();
         currentHealth = maxHealth;
     }
 
-    public virtual void Wonnd(TankBase attackTank) {
+    public virtual void Wonnd(TankBase attackTank)
+    {
         int dmg = attackTank.atk - def;
 
         if (dmg > 0)
@@ -42,15 +45,38 @@ public abstract class TankBase : MonoBehaviour
         }
     }
 
+    private void InitHealthBar()
+    {
+
+        if (healthBar == null)
+        {
+            GameObject canvasRoot = GameObject.Find("HealthBarRoot");
+
+            if (healthBarPrefab != null && canvasRoot != null)
+            {
+                healthBar = Instantiate(healthBarPrefab, canvasRoot.transform);
+                var follow = healthBar.GetComponent<HealthBarFollow>();
+                follow.target = this.transform;
+            }
+        }
+
+    }
+
     public void UpdateHealthUI()
     {
         if (healthBar == null) return;
-        HealthBar healthBarScript = healthBar?.GetComponent<HealthBar>();
+        HealthBar healthBarScript = healthBar.GetComponent<HealthBar>();
         if (healthBarScript == null) return;
         healthBarScript.UpdateHealthUI(maxHealth, currentHealth);
     }
 
-    protected virtual void Die() {
+    protected virtual void Die()
+    {
+        if (healthBar != null)
+        {
+            Destroy(healthBar);
+        }
+
         PlayDieEffect();
         Destroy(gameObject);
     }

@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerTank : TankBase
@@ -54,7 +51,6 @@ public class PlayerTank : TankBase
     public override void Wonnd(TankBase attackTank)
     {
         base.Wonnd(attackTank);
-        Debug.Log(" ‹µΩ…À∫¶");
     }
 
     public void ChangeWeapon(GameObject weaponPrefab)
@@ -69,5 +65,11 @@ public class PlayerTank : TankBase
         }
         GameObject newWeapon = Instantiate(weaponPrefab, waeponSolt.transform);
         weapon = newWeapon.GetComponent<TankWeapon>();
+    }
+
+    protected override void Die()
+    {
+        base.Die();
+        FailurePanel.Instance.ShowMinePanel();
     }
 }

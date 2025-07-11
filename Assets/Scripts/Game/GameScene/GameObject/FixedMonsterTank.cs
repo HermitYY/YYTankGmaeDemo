@@ -22,4 +22,10 @@ public class FixedMonsterTank : TankBase
         }
         AttackIntervalTimer -= Time.deltaTime;
     }
+
+    protected override void Die()
+    {
+        GamePanel.Instance.AddSorce(5);
+        base.Die();
+    }
 }
